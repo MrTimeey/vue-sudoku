@@ -17,7 +17,7 @@
 
         <div v-for="(row, rowIndex) in sudokuMatrix" class="grid-row" :key="rowIndex">
           <div v-for="(cell, cellIndex) in row" class="grid-cell" :key="rowIndex + '_' + cellIndex">
-            <input type="text" v-bind:key="cell.num" v-model="cell.num" class="grid-cell-editor"
+            <input type="number" v-bind:key="cell.num" v-model="cell.num" class="grid-cell-editor"
                    :class="cell.given? 'given-cell': 'empty-cell'"/>
           </div>
         </div>
@@ -186,7 +186,7 @@ export default {
 }
 
 .empty-cell {
-  font-weight: bold
+  font-weight: bold;
 }
 
 .grid-cell-editor {
@@ -223,5 +223,17 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
 {
   opacity: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 </style>
