@@ -2,10 +2,13 @@
   <div id="app-sudoku">
 
     <div class="buttons-container">
-      <button class="button" v-on:click="initializeGame()"><span>{{ initializeGameText }}</span></button>
+
+      <button class="button" v-on:click="initializeGame(0)" v-if="!isGameStarted && !showAnswer">Easy</button>
+      <button class="button" v-on:click="initializeGame(1)" v-if="!isGameStarted && !showAnswer">Medium</button>
+      <button class="button" v-on:click="initializeGame(2)" v-if="!isGameStarted && !showAnswer">Hard</button>
 
       <transition name="fade">
-        <button class="button" v-on:click="evaluateGame()" v-if="isGameStarted"><span>{{ evaluateGameText }}</span></button>
+        <button class="button" v-on:click="evaluateGame()" v-if="isGameStarted && !showAnswer">Verify</button>
       </transition>
     </div>
 
@@ -14,12 +17,18 @@
 
         <div v-for="(row, rowIndex) in sudokuMatrix" class="grid-row" :key="rowIndex">
           <div v-for="(cell, cellIndex) in row" class="grid-cell" :key="rowIndex + '_' + cellIndex">
-              <input type="text" v-bind:key="cell.num" v-model="cell.num" class="grid-cell-editor"/>
+            <input type="text" v-bind:key="cell.num" v-model="cell.num" class="grid-cell-editor"
+                   :class="cell.given? 'given-cell': 'empty-cell'"/>
           </div>
         </div>
 
       </div>
     </transition>
+
+    <button class="button" v-on:click="resolveGame()" v-if="isGameStarted && !showAnswer" style="margin-top: 30px;">
+      Resolve
+    </button>
+    <button class="button" v-on:click="cancelGame()" v-if="isGameStarted && !showAnswer">New</button>
 
     <transition name="fade">
       <div v-if="showAnswer" class="answer">
@@ -33,12 +42,15 @@
 
 <script>
 
+import {SudokuGenerator} from 'js-sudoku-generator'
 import {isValidSudoku} from 'is-valid-sudoku'
 
 export default {
-  name: 'SimpleSudoku',
+  name: 'SudokuGame',
   data: () => ({
 
+    sudokuBoard: {},
+    sudokuSheet: {},
     sudokuMatrix: [],
     initializeGameText: "Start!",
     evaluateGameText: "Verify!",
@@ -47,30 +59,38 @@ export default {
     showAnswer: false,
     isValid: false
   }),
+  mounted() {
+    SudokuGenerator.generate(2);
+    this.sudokuBoard = SudokuGenerator.generatedBoards[0];
+  },
   methods: {
 
-    initializeGame() {
+    cancelGame() {
+      this.isGameStarted = false;
+      SudokuGenerator.generate(2);
+      this.sudokuBoard = SudokuGenerator.generatedBoards[0];
+    },
 
-      let defaultSudokuMatrix = [
-        [{ num: 5 }, { num: 3 }, { num: 4 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 1 }, { num: 2 }],
-        [{ num: 6 }, { num: 7 }, { num: 2 }, { num: 1 }, { num: 9 }, { num: 5 }, { num: 3 }, { num: 4 }, { num: 8 }],
-        [{ num: 1 }, { num: 9 }, { num: 8 }, { num: 3 }, { num: 4 }, { num: 2 }, { num: 5 }, { num: 6 }, { num: 7 }],
-        [{ num: 8 }, { num: 5 }, { num: 9 }, { num: 7 }, { num: 6 }, { num: 1 }, { num: 4 }, { num: 2 }, { num: 3 }],
-        [{ num: 4 }, { num: 2 }, { num: 6 }, { num: 8 }, { num: 5 }, { num: 3 }, { num: 7 }, { num: 9 }, { num: 1 }],
-        [{ num: 7 }, { num: 1 }, { num: 3 }, { num: 9 }, { num: 2 }, { num: 4 }, { num: 8 }, { num: 5 }, { num: 6 }],
-        [{ num: 9 }, { num: 6 }, { num: 1 }, { num: 5 }, { num: 3 }, { num: 7 }, { num: 2 }, { num: 8 }, { num: 4 }],
-        [{ num: 2 }, { num: 8 }, { num: 7 }, { num: 4 }, { num: 1 }, { num: 9 }, { num: 6 }, { num: 3 }, { num: 5 }],
-        [{ num: 3 }, { num: 4 }, { num: 5 }, { num: 2 }, { num: 8 }, { num: 6 }, { num: 1 }, { num: 7 }, { num: 9 }]
-      ];
-      for (let i = 0; i < defaultSudokuMatrix.length; ++i) {
-        for (let k = 0; k < 2; ++k) {
-          let randomColumnIndex = Math.floor(Math.random() * defaultSudokuMatrix.length);
-          defaultSudokuMatrix[i][randomColumnIndex].num = "";
+    resolveGame() {
+      let solution = this.sudokuBoard.board;
+      for (let i = 0; i < this.sudokuMatrix.length; ++i) {
+        for (let k = 0; k < this.sudokuMatrix.length; ++k) {
+          let obj = this.sudokuMatrix[i][k];
+          if (!obj.given) {
+            obj.num = solution[i][k];
+          }
         }
       }
+    },
 
-      this.sudokuMatrix = defaultSudokuMatrix;
-      this.initializeGameText = "Restart";
+    initializeGame(difficulty) {
+
+      this.sudokuSheet = this.sudokuBoard.getSheet(difficulty);
+
+      this.sudokuMatrix = this.sudokuSheet.map(row => row.map(cell => {
+        let given = !!cell;
+        return {num: cell, given: given}
+      }));
       this.isGameStarted = true;
     },
 
@@ -89,30 +109,11 @@ export default {
     },
 
     evaluateGame() {
-      if (isValidSudoku(this.transformMatrix(this.sudokuMatrix))) {
-
-        this.showAnswer = true;
-        this.isValid = true;
-        this.isGameStarted = false;
-
-        setTimeout(() => {
-          this.showAnswer = false;
-          this.isGameStarted = true;
-        }, 4000);
-
-      }
-      else {
-
-        this.isValid = false;
-        this.showAnswer = true;
-        this.isGameStarted = false;
-
-        setTimeout(() => {
-          this.showAnswer = false;
-          this.isGameStarted = true;
-        }, 4000);
-
-      }
+      this.showAnswer = true;
+      this.isValid = isValidSudoku(this.transformMatrix(this.sudokuMatrix));
+      setTimeout(() => {
+        this.showAnswer = false;
+      }, 3000);
 
     }
 
@@ -180,8 +181,12 @@ export default {
   border: 1px solid gray;
 }
 
+.given-cell {
+  font-weight: normal
+}
+
 .empty-cell {
-  color: aqua;
+  font-weight: bold
 }
 
 .grid-cell-editor {
@@ -189,7 +194,6 @@ export default {
   width: 20px;
   height: 20px;
   font-family: 'Dosis', sans-serif;
-  font-weight: bold;
   text-align: center;
   font-size: 18px;
   transition: all ease 1.0s;
@@ -216,7 +220,8 @@ export default {
   transition: opacity .5s;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
   opacity: 0;
 }
 </style>

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <simple-sudoku/>
+    <sudoku-game/>
   </div>
 </template>
 
 <script>
-import SimpleSudoku from "@/components/SimpleSudoku";
+import SudokuGame from "@/components/SudokuGame";
 
 export default {
   name: 'App',
   components: {
-    SimpleSudoku,
+    SudokuGame,
   }
 }
 </script>
