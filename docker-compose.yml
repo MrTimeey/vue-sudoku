@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  sudoku:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 8095:80
