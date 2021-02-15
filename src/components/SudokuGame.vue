@@ -195,6 +195,7 @@ export default {
   width: 20px;
   height: 20px;
   font-family: 'Dosis', sans-serif;
+  background-color: white !important;
   text-align: center;
   font-size: 18px;
   transition: all ease 1.0s;
