@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "fork-me-on-github-vue": "^1.0.7",
     "is-valid-sudoku": "0.0.1",
     "js-sudoku-generator": "0.0.3",
     "vue": "^2.6.11"

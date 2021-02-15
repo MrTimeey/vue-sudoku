@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <Ribbon id="ribbon"
+        v-bind="ribbonOptions"
+    ></Ribbon>
     <sudoku-game/>
   </div>
 </template>
@@ -11,7 +14,16 @@ export default {
   name: 'App',
   components: {
     SudokuGame,
-  }
+  },
+  data: () => ({
+    ribbonOptions: {
+      text: 'Fork me on GitHub',
+      linkUrl: 'https://github.com/MrTimeey/vue-sudoku',
+      fixed: true,
+      left: true,
+      bottom: true,
+    }
+  })
 }
 </script>
 
