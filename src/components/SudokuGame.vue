@@ -19,7 +19,7 @@
           <div v-for="(cell, cellIndex) in row" class="grid-cell" :key="rowIndex + '_' + cellIndex">
             <input v-bind:key="cell.num" v-model="cell.num" class="grid-cell-editor"
                    :class="cell.given? 'given-cell': 'empty-cell'" :disabled="cell.given"
-                   inputmode="numeric" pattern="[0-9]*" type="number"/>
+                   type="number"/>
           </div>
         </div>
 
