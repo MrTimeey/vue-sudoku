@@ -20,9 +20,9 @@ export default {
     async startGame(level) {
       this.$store.commit('setLoading', true);
       await this.$store.dispatch('game/initGame');
-      this.$store.commit('game/setDifficulty', level);
+      this.$store.commit('game/startGame', level);
       this.$store.commit('setLoading', false);
-      console.log(this.$store.getters['game/game']);
+      await this.$router.push({name:'GamePage'});
     }
   }
 }
