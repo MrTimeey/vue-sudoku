@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/start',
+    redirect: '/startPage',
     name: 'blank',
     component: StartPage
   },

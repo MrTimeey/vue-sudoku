@@ -1,19 +1,17 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <Ribbon id="ribbon"
         v-bind="ribbonOptions"
     ></Ribbon>
-    <sudoku-game/>
-  </div>
+    <router-view></router-view>
+  </v-app>
 </template>
 
 <script>
-import SudokuGame from "@/components/SudokuGame";
 
 export default {
   name: 'App',
   components: {
-    SudokuGame,
   },
   data: () => ({
     ribbonOptions: {
@@ -33,7 +31,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 60px;
 }
 </style>
