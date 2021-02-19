@@ -2,7 +2,7 @@
   <v-main>
     <v-container>
       <div class="block text-center notFound">
-        <v-icon large color="blue darken-2">
+        <v-icon x-large>
           report_problem
         </v-icon>
         <h2>Page not found</h2>
