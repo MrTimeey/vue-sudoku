@@ -31,6 +31,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding: 60px;
+  padding: 90px;
 }
 </style>
