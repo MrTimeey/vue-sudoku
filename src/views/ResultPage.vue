@@ -44,12 +44,21 @@ h1 {
   margin-bottom: 20px;
 }
 
+
+
 .back-btn {
   margin-top: 20px;
 }
 
 img {
   width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    margin-top: 50px;
+    width: 80% !important;
+  }
 }
 
 </style>

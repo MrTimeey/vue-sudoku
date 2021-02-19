@@ -39,4 +39,10 @@ export default {
   height: 200px;
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  img {
+    margin-top: 50px;
+  }
+}
 </style>
