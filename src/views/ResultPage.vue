@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="result-container">
     <h1>{{ result }}</h1>
     <figure class="image">
       <img :src="gifUrl" :alt="result">
@@ -40,24 +40,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   margin-bottom: 20px;
 }
-
-
 
 .back-btn {
   margin-top: 20px;
 }
 
 img {
-  width: 40%;
+  width: 500px;
 }
 
 @media screen and (max-width: 768px) {
   img {
-    margin-top: 50px;
-    width: 80% !important;
+    width: 300px !important;
   }
 }
 

@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <game-icon/>
-    <div class="difficulty-container">
+    <div class="game-container">
+      <game-icon class="sudoku-icon"/>
       <b-button @click="startGame(0)">Easy</b-button>
       <b-button @click="startGame(1)">Medium</b-button>
       <b-button @click="startGame(2)">Hard</b-button>
     </div>
-  </div>
 </template>
 
 <script>
@@ -30,19 +28,22 @@ export default {
 
 <style scoped lang="scss">
 
-.difficulty-container {
+.game-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
   width: 100%;
 }
 
+.sudoku-icon {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 768px) {
-  img {
-    margin-top: 50px;
+  .sudoku-icon {
+    width: 300px !important;
   }
 }
 </style>
