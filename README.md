@@ -5,7 +5,6 @@ Used as a learning project for various technologies.
 
 The game currently uses external libraries for grid generation and validation.
 
-
 ![game-preview](vue-sudoku.gif)
 
 ## Project setup
