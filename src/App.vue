@@ -1,8 +1,5 @@
 <template>
   <v-app id="app">
-    <Ribbon id="ribbon"
-        v-bind="ribbonOptions"
-    ></Ribbon>
     <router-view></router-view>
   </v-app>
 </template>
@@ -11,17 +8,6 @@
 
 export default {
   name: 'App',
-  components: {
-  },
-  data: () => ({
-    ribbonOptions: {
-      text: 'Fork me on GitHub',
-      linkUrl: 'https://github.com/MrTimeey/vue-sudoku',
-      fixed: true,
-      left: true,
-      bottom: true,
-    }
-  })
 }
 </script>
 
