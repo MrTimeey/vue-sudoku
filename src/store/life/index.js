@@ -8,6 +8,9 @@ let mutations = {
     reduceByOne(state) {
         state.currentAmount = state.currentAmount - 1;
     },
+    init(state) {
+        state.currentAmount = state.maximum;
+    }
 };
 let getters = {
     isGameOver: (state) => {

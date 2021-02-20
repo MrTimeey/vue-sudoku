@@ -19,6 +19,7 @@ export default {
   methods: {
     async startGame(level) {
       this.$store.commit('setLoading', true);
+      this.$store.commit('life/init');
       await this.$store.dispatch('game/initGame');
       this.$store.commit('game/startGame', level);
       this.$store.commit('setLoading', false);
