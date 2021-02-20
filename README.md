@@ -1,4 +1,4 @@
-# Sudoku
+# Sudoku ![main](https://github.com/MrTimeey/vue-sudoku/workflows/main/badge.svg?branch=main)
 
 Simple sudoku game build with vue.js, vuetify, vuex and vue-router.
 Used as a learning project for various technologies.
