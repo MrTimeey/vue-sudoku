@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import game from './game'
+import life from './life'
 
 Vue.use(Vuex)
 
@@ -15,5 +16,5 @@ export default new Vuex.Store({
     },
     getters: {},
     actions: {},
-    modules: {game}
+    modules: {game, life}
 })
