@@ -39,7 +39,7 @@ export default {
       'https://media.giphy.com/media/ljtfkyTD3PIUZaKWRi/giphy.gif',
       'https://media.giphy.com/media/UtVMrybfkugSN8sHwA/giphy.gif',
       'https://media.giphy.com/media/ujgPAqiRnY9gKZg9B1/giphy.gif',
-      'https://media.giphy.com/media/KHJw9NRFDMom487qyo/giphy.gif',
+      'https://media.giphy.com/media/26ybwvTX4DTkwst6U/giphy.gif',
       'https://media.giphy.com/media/NQL7Wuo2JSQSY/giphy.gif',
       'https://media.giphy.com/media/nKN7E76a27Uek/giphy.gif',
       'https://media.giphy.com/media/AAnIjZPUhrUM8/giphy.gif',

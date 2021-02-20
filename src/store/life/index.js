@@ -1,7 +1,7 @@
 
 let state = {
-    maximum: 3,
-    currentAmount: 3,
+    maximum: 4,
+    currentAmount: 4,
 };
 let actions = {};
 let mutations = {
