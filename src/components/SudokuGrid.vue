@@ -7,7 +7,7 @@
                  v-model="cell.num"
                  class="grid-cell-editor"
                  :class="cell.given? 'given-cell': 'empty-cell'"
-                 :disabled="cell.given"
+                 :disabled="cell.given || finished"
                  @click="hint(cell, rowIndex, cellIndex)"
                  type="number"/>
         </div>
@@ -25,7 +25,10 @@ export default {
     sudokuMatrix: Array
   },
   computed: {
-    ...mapGetters({cellSolution: 'game/cellSolution'})
+    ...mapGetters({cellSolution: 'game/cellSolution'}),
+    finished() {
+      return this.$store.getters['life/isGameOver'] || this.$store.state.game.gameFinished;
+    }
   },
   methods: {
     hint(cell, rowIndex, cellIndex) {

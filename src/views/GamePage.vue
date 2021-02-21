@@ -2,19 +2,19 @@
   <div class="game-container">
     <b-button class="b-btn"
               @click="verifyGame"
-              v-if="!this.$store.getters['life/isGameOver'] && !this.$store.state.game.gameFinished">
+              v-if="!finished">
       Verify
     </b-button>
     <b-button class="b-btn"
               @click="solveGame"
-              v-if="this.$store.getters['life/isGameOver'] || this.$store.state.game.gameFinished">
+              v-if="finished">
       Resolve
     </b-button>
     <life-display/>
     <sudoku-grid class="sudoku-grid" :sudoku-matrix="this.$store.state.game.currentGame"/>
     <b-button class="b-btn" @click="cancelGame">New</b-button>
-    <b-button class="b-btn" @click="$store.commit('game/clearUserInput')">Clear</b-button>
-    <hint-display class="hint"/>
+    <b-button class="b-btn" @click="$store.commit('game/clearUserInput')" v-if="!this.finished">Clear</b-button>
+    <hint-display class="hint" v-if="!this.finished"/>
 
   </div>
 </template>
@@ -28,6 +28,11 @@ import HintDisplay from "@/components/HintDisplay";
 export default {
   name: "GamePage",
   components: {HintDisplay, LifeDisplay, BButton, SudokuGrid},
+  computed: {
+    finished() {
+      return this.$store.getters['life/isGameOver'] || this.$store.state.game.gameFinished;
+    }
+  },
   methods: {
     cancelGame() {
       this.$router.push({name: 'StartPage'})
