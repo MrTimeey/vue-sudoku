@@ -24,7 +24,7 @@ let actions = {
             }
         }
         commit('setCurrentGame', game)
-    }
+    },
 };
 let mutations = {
     setBoard(state, board) {
@@ -43,6 +43,13 @@ let mutations = {
     },
     setGameFinished(state, status) {
         state.gameFinished = status;
+    },
+    clearUserInput(state) {
+        state.currentGame.map(row => row.map(cell => {
+            if (!cell.given) {
+                cell.num = null
+            }
+        }))
     }
 };
 let getters = {
