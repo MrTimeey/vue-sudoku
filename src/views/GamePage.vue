@@ -13,21 +13,8 @@
     <life-display/>
     <sudoku-grid class="sudoku-grid" :sudoku-matrix="this.$store.state.game.currentGame"/>
     <b-button class="b-btn" @click="cancelGame">New</b-button>
-    <hint-display/>
-
-
-    <v-btn
-        class="hint-btn mx-2"
-        fab
-        :ripple="false"
-        @click="$store.commit('game/clearUserInput');"
-    >
-      <v-icon dark>
-        clear
-      </v-icon>
-    </v-btn>
-
-
+    <b-button class="b-btn" @click="$store.commit('game/clearUserInput')">Clear</b-button>
+    <hint-display class="hint"/>
 
   </div>
 </template>
@@ -67,6 +54,10 @@ export default {
 .sudoku-grid {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.hint {
+  margin-top: 10px;
 }
 
 </style>
