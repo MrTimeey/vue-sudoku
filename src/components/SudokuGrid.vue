@@ -54,7 +54,7 @@ export default {
   font-family: 'Dosis', sans-serif;
   background-color: white !important;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   transition: all ease 1.0s;
 }
 
@@ -77,5 +77,16 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-cell {
+    padding: 8px !important;
+  }
+  .grid-cell-editor {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
 }
 </style>
