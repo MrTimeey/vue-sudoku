@@ -74,6 +74,11 @@ export default {
   mounted() {
     if (!this.gameState) {
       this.$store.commit('life/reduceByOne');
+      if (this.$store.getters["life/isGameOver"]) {
+        this.$store.commit('game/setGameFinished', true);
+      }
+    } else {
+      this.$store.commit('game/setGameFinished', true);
     }
   },
   computed: {

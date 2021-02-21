@@ -4,6 +4,7 @@ import {isValidSudoku} from "is-valid-sudoku";
 let state = {
     sudokuBoard: undefined,
     currentGame: [],
+    gameFinished: false
 };
 let actions = {
     async initGame({commit}) {
@@ -39,6 +40,9 @@ let mutations = {
     },
     setCurrentGame(state, game) {
         state.currentGame = game;
+    },
+    setGameFinished(state, status) {
+        state.gameFinished = status;
     }
 };
 let getters = {

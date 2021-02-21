@@ -20,6 +20,7 @@ export default {
     async startGame(level) {
       this.$store.commit('setLoading', true);
       this.$store.commit('life/init');
+      this.$store.commit('game/setGameFinished', false);
       await this.$store.dispatch('game/initGame');
       this.$store.commit('game/startGame', level);
       this.$store.commit('setLoading', false);

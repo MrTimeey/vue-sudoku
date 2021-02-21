@@ -2,12 +2,12 @@
   <div class="game-container">
     <b-button class="b-btn"
               @click="verifyGame"
-              v-if="!this.$store.getters['life/isGameOver']">
+              v-if="!this.$store.getters['life/isGameOver'] && !this.$store.state.game.gameFinished">
       Verify
     </b-button>
     <b-button class="b-btn"
               @click="solveGame"
-              v-if="this.$store.getters['life/isGameOver']">
+              v-if="this.$store.getters['life/isGameOver'] || this.$store.state.game.gameFinished">
       Resolve
     </b-button>
     <life-display/>
