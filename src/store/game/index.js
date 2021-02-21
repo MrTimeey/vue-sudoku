@@ -50,6 +50,9 @@ let getters = {
         let currentGameCopy = [...state.currentGame];
         let validatableGame = currentGameCopy.map(row => row.map(cell => cell.num));
         return isValidSudoku(validatableGame);
+    },
+    cellSolution: (state) => {
+        return (rowIndex, cellIndex) => state.sudokuBoard.board[rowIndex][cellIndex];
     }
 };
 let modules = {};

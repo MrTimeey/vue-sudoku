@@ -8,6 +8,7 @@
                  class="grid-cell-editor"
                  :class="cell.given? 'given-cell': 'empty-cell'"
                  :disabled="cell.given"
+                 @click="hint(cell, rowIndex, cellIndex)"
                  type="number"/>
         </div>
       </div>
@@ -16,10 +17,24 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
+
 export default {
   name: "SudokuGrid",
   props: {
     sudokuMatrix: Array
+  },
+  computed: {
+    ...mapGetters({cellSolution: 'game/cellSolution'})
+  },
+  methods: {
+    hint(cell, rowIndex, cellIndex) {
+      if (this.$store.getters['hint/hintModeActivated'] && !cell.given) {
+        this.$store.commit("hint/reduceByOne");
+        cell.num = this.cellSolution(rowIndex, cellIndex);
+        cell.given = true;
+      }
+    }
   }
 
 }

@@ -13,6 +13,7 @@
     <life-display/>
     <sudoku-grid class="sudoku-grid" :sudoku-matrix="this.$store.state.game.currentGame"/>
     <b-button class="b-btn" @click="cancelGame">New</b-button>
+    <hint-display/>
   </div>
 </template>
 
@@ -20,10 +21,11 @@
 import SudokuGrid from "@/components/SudokuGrid";
 import BButton from "@/components/base/BButton";
 import LifeDisplay from "@/components/LifeDisplay";
+import HintDisplay from "@/components/HintDisplay";
 
 export default {
   name: "GamePage",
-  components: {LifeDisplay, BButton, SudokuGrid},
+  components: {HintDisplay, LifeDisplay, BButton, SudokuGrid},
   methods: {
     cancelGame() {
       this.$router.push({name: 'StartPage'})
