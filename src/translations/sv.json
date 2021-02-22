@@ -19,5 +19,12 @@
   "notFound": {
     "title": "Sidan hittas inte",
     "description": "Tyvärr, sidan du begärde kunde inte hittas."
+  },
+  "languages": {
+    "en": "Engelsk",
+    "de": "Tysk",
+    "es": "Spanska",
+    "fr": "Franska",
+    "sv": "Svenska"
   }
 }

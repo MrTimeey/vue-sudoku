@@ -19,5 +19,12 @@
   "notFound": {
     "title": "Page not found",
     "description": "We're sorry, the page you requested could not be found."
+  },
+  "languages": {
+    "en": "English",
+    "de": "German",
+    "es": "Spanish",
+    "fr": "French",
+    "sv": "Swedish"
   }
 }

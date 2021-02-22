@@ -18,6 +18,13 @@
   },
   "notFound": {
     "title": "Página no encontrada",
-    "description": "We're sorry, the page you requested could not be found."
+    "description": "Lo sentimos, la página solicitada no se pudo encontrar."
+  },
+  "languages": {
+    "en": "Inglés",
+    "de": "Alemán",
+    "es": "Español",
+    "fr": "Francés",
+    "sv": "Sueco"
   }
 }

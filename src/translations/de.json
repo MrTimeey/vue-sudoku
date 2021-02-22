@@ -19,5 +19,12 @@
   "notFound": {
     "title": "Seite nicht gefunden",
     "description": "Es tut uns leid, die von Ihnen angeforderte Seite wurde nicht gefunden."
+  },
+  "languages": {
+    "en": "Englisch",
+    "de": "Deutsch",
+    "es": "Spanisch",
+    "fr": "Französisch",
+    "sv": "Schwedisch"
   }
 }
