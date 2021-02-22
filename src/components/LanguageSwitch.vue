@@ -1,6 +1,6 @@
 <template>
   <div class="language-switch-wrapper">
-    <div class="language-switch" :class="classes">
+    <div class="language-switch" v-click-outside="hide" :class="classes">
       <button
           class="language-switch-button"
           @click="toggle"
@@ -64,6 +64,7 @@ export default {
     },
     changeLanguage(locale) {
       i18n.locale = locale;
+      localStorage.locale = locale;
       this.isDropdownVisible = false
     }
   }
