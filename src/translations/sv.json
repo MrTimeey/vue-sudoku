@@ -1,3 +1,19 @@
 {
-  "message": "Hallå i18n !!"
+  "start": {
+    "easy" : "Lätt",
+    "medium" : "Medium",
+    "hard": "hård"
+  },
+  "banner": "Gaffla mig på Github",
+  "game": {
+    "verify": "Kontrollera",
+    "resolve": "Lösa",
+    "new": "Ny",
+    "clear": "Klar"
+  },
+  "result": {
+    "victory": "Vinna!",
+    "gameOver": "Spelet är över!",
+    "failed": "Misslyckades!"
+  }
 }

@@ -1,3 +1,19 @@
 {
-  "message": "Hola i18n !!"
+  "start": {
+    "easy" : "Fácil",
+    "medium" : "Medio",
+    "hard": "Pesado"
+  },
+  "banner": "Bifurcame en Github",
+  "game": {
+    "verify": "Verificar",
+    "resolve": "Resolver",
+    "new": "Nuevo",
+    "clear": "Claro"
+  },
+  "result": {
+    "victory": "Victoria!",
+    "gameOver": "Juego terminado!",
+    "failed": "Fallido!"
+  }
 }

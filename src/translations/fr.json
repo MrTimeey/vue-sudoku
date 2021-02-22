@@ -1,3 +1,19 @@
 {
-  "message": "Bonjour i18n !!"
+  "start": {
+    "easy" : "Facile",
+    "medium" : "Moyen",
+    "hard": "Difficile"
+  },
+  "banner": "Fork moi sur Github",
+  "game": {
+    "verify": "Vérifier",
+    "resolve": "Résoudre",
+    "new": "Nouveau",
+    "clear": "Dégager"
+  },
+  "result": {
+    "victory": "Gagner!",
+    "gameOver": "Jeu terminé!",
+    "failed": "Manqué!"
+  }
 }
