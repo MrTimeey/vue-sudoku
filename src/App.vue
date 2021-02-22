@@ -6,11 +6,17 @@
 </template>
 
 <script>
-
 import LanguageSwitch from "@/components/LanguageSwitch";
+import i18n from '@/plugins/i18n'
+
 export default {
   name: 'App',
   components: {LanguageSwitch},
+  mounted() {
+    if (localStorage.locale) {
+      i18n.locale = localStorage.locale;
+    }
+  }
 }
 </script>
 
