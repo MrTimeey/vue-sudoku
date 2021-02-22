@@ -15,5 +15,9 @@
     "victory": "Victoria!",
     "gameOver": "Juego terminado!",
     "failed": "Fallido!"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "We're sorry, the page you requested could not be found."
   }
 }

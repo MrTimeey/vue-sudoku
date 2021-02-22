@@ -5,8 +5,8 @@
         <v-icon x-large>
           report_problem
         </v-icon>
-        <h2>Page not found</h2>
-        <p>We're sorry, the page you requested could not be found.</p>
+        <h2>{{ $t('notFound.title') }}</h2>
+        <p>{{ $t('notFound.description') }}</p>
       </div>
     </v-container>
   </v-main>

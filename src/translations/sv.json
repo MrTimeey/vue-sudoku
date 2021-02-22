@@ -15,5 +15,9 @@
     "victory": "Vinna!",
     "gameOver": "Spelet är över!",
     "failed": "Misslyckades!"
+  },
+  "notFound": {
+    "title": "Sidan hittas inte",
+    "description": "Tyvärr, sidan du begärde kunde inte hittas."
   }
 }
