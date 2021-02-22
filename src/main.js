@@ -12,6 +12,15 @@ Vue.use(VueI18n);
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+  let language = to.params.lang;
+  if (!language) {
+    language = 'en'
+  }
+  i18n.locale = language
+  next()
+})
+
 new Vue({
   i18n,
   router,
