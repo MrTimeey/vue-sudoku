@@ -1,13 +1,16 @@
 <template>
   <v-app id="app">
     <router-view></router-view>
+    <language-switch/>
   </v-app>
 </template>
 
 <script>
 
+import LanguageSwitch from "@/components/LanguageSwitch";
 export default {
   name: 'App',
+  components: {LanguageSwitch},
 }
 </script>
 
