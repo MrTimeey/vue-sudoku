@@ -86,7 +86,7 @@ export default {
       return this.$store.getters['game/gameState'];
     },
     result() {
-      return this.gameState ? 'Success!' : this.$store.getters['life/isGameOver'] ? 'Game over!' : 'Failed!';
+      return this.gameState ? this.$t('result.victory') : this.$store.getters['life/isGameOver'] ? this.$t('result.gameOver') : this.$t('result.failed');
     },
     gifUrl() {
       if (this.gameState) {

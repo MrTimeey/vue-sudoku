@@ -2,9 +2,9 @@
   <div class="game-container">
     <fork-me-banner/>
     <game-icon class="sudoku-icon"/>
-    <b-button @click="startGame(0)">Easy</b-button>
-    <b-button @click="startGame(1)">Medium</b-button>
-    <b-button @click="startGame(2)">Hard</b-button>
+    <b-button @click="startGame(0)">{{ $t('start.easy') }}</b-button>
+    <b-button @click="startGame(1)">{{ $t('start.medium') }}</b-button>
+    <b-button @click="startGame(2)">{{ $t('start.hard') }}</b-button>
   </div>
 </template>
 
@@ -12,6 +12,7 @@
 import GameIcon from "@/components/GameIcon";
 import BButton from "@/components/base/BButton";
 import ForkMeBanner from "@/components/ForkMeBanner";
+import i18n from '@/plugins/i18n';
 
 export default {
   name: "StartPage",
@@ -26,6 +27,12 @@ export default {
       this.$store.commit('game/startGame', level);
       this.$store.commit('setLoading', false);
       await this.$router.push({name: 'GamePage'});
+    },
+    changeLocale(locale) {
+      i18n.locale = locale;
+      this.$router.push({
+        params: { lang: locale }
+      })
     }
   }
 }
