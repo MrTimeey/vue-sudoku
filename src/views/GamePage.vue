@@ -15,7 +15,6 @@
     <b-button class="b-btn" @click="cancelGame">{{ $t('game.new') }}</b-button>
     <b-button class="b-btn" @click="$store.commit('game/clearUserInput')" v-if="!this.finished">{{ $t('game.clear') }}</b-button>
     <hint-display class="hint" v-if="!this.finished"/>
-
   </div>
 </template>
 
@@ -62,7 +61,7 @@ export default {
 }
 
 .hint {
-  margin-top: 10px;
+  margin: 10px 0 20px 0;
 }
 
 </style>

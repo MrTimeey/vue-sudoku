@@ -1,6 +1,7 @@
 <template>
   <v-btn
       class="b-btn font-weight-bold ma-2"
+      elevation="1"
       :loading="this.$store.state.isLoading"
       :disabled="this.$store.state.isLoading"
       depressed

@@ -83,6 +83,7 @@ export default {
     top: 0px;
     right: 24px;
     font-size: 15px;
+
   }
   .language-switch-button {
     position: absolute;
@@ -108,6 +109,13 @@ export default {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
       border-bottom: none 1px transparent;
+
+    }
+
+    &:not(.dropdown-open) {
+      -webkit-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
+      -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
+      box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
     }
   }
   .language-switch-button-arrow {
@@ -126,6 +134,10 @@ export default {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
+
+      -webkit-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
+      -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
+      box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
     }
   }
   .language-switch-item {
