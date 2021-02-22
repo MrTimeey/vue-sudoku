@@ -1,6 +1,6 @@
 # Sudoku ![main](https://github.com/MrTimeey/vue-sudoku/workflows/main/badge.svg?branch=main)
 
-Simple sudoku game build with vue.js, vuetify, vuex and vue-router.
+Simple sudoku game build with vue.js, vuetify, vuex, vue-router and vue-i18n.
 Used as a learning project for various technologies.
 
 The game currently uses external libraries for grid generation and validation.
