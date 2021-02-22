@@ -102,7 +102,7 @@ input[type=number] {
     padding: 8px !important;
   }
   .grid-cell-editor {
-    font-size: 18px;
+    font-size: 16px;
     width: 18px;
     height: 18px;
   }
