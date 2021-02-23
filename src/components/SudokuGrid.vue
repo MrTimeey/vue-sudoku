@@ -7,7 +7,7 @@
                  v-model="cell.num"
                  class="grid-cell-editor"
                  :class="cell.given? 'given-cell': 'empty-cell'"
-                 :disabled="cell.given || finished"
+                 :disabled="cell.given || gameFinished"
                  @click="hint(cell, rowIndex, cellIndex)"
                  type="number"/>
         </div>
@@ -18,17 +18,16 @@
 
 <script>
 import {mapGetters} from "vuex"
+import gameMixin from "@/mixins/gameMixin";
 
 export default {
   name: "SudokuGrid",
+  mixins: [gameMixin],
   props: {
     sudokuMatrix: Array
   },
   computed: {
     ...mapGetters({cellSolution: 'game/cellSolution'}),
-    finished() {
-      return this.$store.getters['life/isGameOver'] || this.$store.state.game.gameFinished;
-    }
   },
   methods: {
     hint(cell, rowIndex, cellIndex) {

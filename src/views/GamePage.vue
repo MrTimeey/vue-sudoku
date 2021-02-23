@@ -2,19 +2,19 @@
   <div class="game-container">
     <b-button class="b-btn"
               @click="verifyGame"
-              v-if="!finished">
+              v-if="!gameFinished">
       {{ $t('game.verify') }}
     </b-button>
     <b-button class="b-btn"
               @click="solveGame"
-              v-if="finished">
+              v-if="gameFinished">
       {{ $t('game.resolve') }}
     </b-button>
     <life-display/>
     <sudoku-grid class="sudoku-grid" :sudoku-matrix="this.$store.state.game.currentGame"/>
     <b-button class="b-btn" @click="cancelGame">{{ $t('game.new') }}</b-button>
-    <b-button class="b-btn" @click="$store.commit('game/clearUserInput')" v-if="!this.finished">{{ $t('game.clear') }}</b-button>
-    <hint-display class="hint" v-if="!this.finished"/>
+    <b-button class="b-btn" @click="$store.commit('game/clearUserInput')" v-if="!this.gameFinished">{{ $t('game.clear') }}</b-button>
+    <hint-display class="hint" v-if="!this.gameFinished"/>
   </div>
 </template>
 
@@ -23,15 +23,12 @@ import SudokuGrid from "@/components/SudokuGrid";
 import BButton from "@/components/base/BButton";
 import LifeDisplay from "@/components/LifeDisplay";
 import HintDisplay from "@/components/HintDisplay";
+import gameMixin from "@/mixins/gameMixin";
 
 export default {
   name: "GamePage",
   components: {HintDisplay, LifeDisplay, BButton, SudokuGrid},
-  computed: {
-    finished() {
-      return this.$store.getters['life/isGameOver'] || this.$store.state.game.gameFinished;
-    }
-  },
+  mixins: [gameMixin],
   methods: {
     cancelGame() {
       this.$router.push({name: 'StartPage'})
