@@ -7,14 +7,14 @@
   "banner": "Fork moi sur Github",
   "game": {
     "verify": "Vérifier",
-    "resolve": "Résoudre",
+    "resolve": "Défaire",
     "new": "Nouveau",
-    "clear": "Dégager"
+    "clear": "Supprimer"
   },
   "result": {
     "victory": "Gagner!",
-    "gameOver": "Jeu terminé!",
-    "failed": "Manqué!"
+    "gameOver": "Jeu perdu!",
+    "failed": "Échoué!"
   },
   "notFound": {
     "title": "Page non trouvée",

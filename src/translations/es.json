@@ -2,18 +2,18 @@
   "start": {
     "easy" : "Fácil",
     "medium" : "Medio",
-    "hard": "Pesado"
+    "hard": "Difícil"
   },
   "banner": "Bifurcame en Github",
   "game": {
     "verify": "Verificar",
     "resolve": "Resolver",
     "new": "Nuevo",
-    "clear": "Claro"
+    "clear": "Borrar"
   },
   "result": {
-    "victory": "Victoria!",
-    "gameOver": "Juego terminado!",
+    "victory": "Ganado!",
+    "gameOver": "Juego perdido!",
     "failed": "Fallido!"
   },
   "notFound": {
