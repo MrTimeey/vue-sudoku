@@ -33,7 +33,6 @@ export default {
   }),
   computed: {
     languages() {
-      console.log(this.languageMap.filter(lang => lang.locale !== i18n.locale))
       return this.languageMap.filter(lang => lang.locale !== i18n.locale);
     },
     languageMap() {
