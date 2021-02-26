@@ -95,11 +95,8 @@ export default {
     z-index: 2;
     padding: 0px 0 5px 5px;
 
-    border-left: solid 1px darkgrey;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-right: solid 1px darkgrey;
-    border-bottom: solid 1px darkgrey;
     background-color: white;
 
     outline: none;
@@ -108,13 +105,12 @@ export default {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
       border-bottom: none 1px transparent;
-
     }
 
     &:not(.dropdown-open) {
-      -webkit-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
-      -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
-      box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
+      -webkit-box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.08);
+      -moz-box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.08);
+      box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.08);
     }
   }
   .language-switch-button-arrow {
@@ -129,14 +125,13 @@ export default {
     background-color: white;
     z-index: 1;
     &.dropdown-open {
-      border: solid 1px darkgrey;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
 
-      -webkit-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
-      -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
-      box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.3);
+      -webkit-box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.08);
+      -moz-box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.08);
+      box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.08);
     }
   }
   .language-switch-item {
