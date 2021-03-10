@@ -9,6 +9,8 @@
 import LanguageSwitch from "@/components/LanguageSwitch";
 import i18n from '@/plugins/i18n'
 
+const countapi = require('countapi-js');
+
 export default {
   name: 'App',
   components: {LanguageSwitch},
@@ -16,6 +18,7 @@ export default {
     if (localStorage.locale) {
       i18n.locale = localStorage.locale;
     }
+    countapi.hit('sudoku.mrtimeey.de', 'total').then((result) => { console.log(result.value) });
   }
 }
 </script>
