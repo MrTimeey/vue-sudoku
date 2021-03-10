@@ -19,6 +19,8 @@ export default {
       i18n.locale = localStorage.locale;
     }
     countapi.hit('sudoku.mrtimeey.de', 'total').then((result) => { console.log(result.value) });
+    countapi.event('totalSudokuVisits').then((result) => { console.log(result.value) });
+
   }
 }
 </script>
