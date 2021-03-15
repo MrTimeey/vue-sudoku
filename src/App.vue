@@ -9,6 +9,7 @@
 import LanguageSwitch from "@/components/LanguageSwitch";
 import i18n from '@/plugins/i18n'
 
+// eslint-disable-next-line no-unused-vars
 const countapi = require('countapi-js');
 
 export default {
@@ -18,8 +19,8 @@ export default {
     if (localStorage.locale) {
       i18n.locale = localStorage.locale;
     }
-    countapi.hit('sudoku.mrtimeey.de', 'total').then((result) => { console.log(result.value) });
-    countapi.event('totalSudokuVisits').then((result) => { console.log(result.value) });
+    /*countapi.hit('sudoku.mrtimeey.de', 'total').then((result) => { console.log(result.value) });
+    countapi.event('totalSudokuVisits').then((result) => { console.log(result.value) });*/
 
   }
 }
