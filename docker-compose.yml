@@ -7,5 +7,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-    - 8095:80
+    #ports:
+    #- 8095:80
+
+networks:
+  default:
+    external:
+      name: mrtimeey
