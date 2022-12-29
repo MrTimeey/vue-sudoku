@@ -4,6 +4,7 @@ services:
 
   sudoku:
     container_name: sudoku
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
